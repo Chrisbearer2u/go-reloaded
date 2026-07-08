@@ -54,7 +54,7 @@ func readFile(filename string) (string, error) {
 	scanner := bufio.NewScanner(file)
 
 	for scanner.Scan() {
-		// Append the current line to the string builder
+
 		content.WriteString(scanner.Text())
 
 		// If the line is not empty, append a newline character
