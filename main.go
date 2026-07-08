@@ -39,7 +39,6 @@ func main() {
 	fmt.Printf("Successfully processed %s to %s\n", inputFile, outputFile)
 }
 
-// readFile reads the content of a file and returns it as a string
 func readFile(filename string) (string, error) {
 	// Open the file with the given filename
 	file, err := os.Open(filename)
