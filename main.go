@@ -33,7 +33,7 @@ func main() {
 
 	if err != nil {
 		fmt.Printf("Error writing output file: %v\n", err)
-		return // Exit the program
+		return
 	}
 
 	// Print success message after processing and saving the file
