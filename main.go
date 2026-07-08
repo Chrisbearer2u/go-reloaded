@@ -40,10 +40,9 @@ func main() {
 }
 
 func readFile(filename string) (string, error) {
-	// Open the file with the given filename
+
 	file, err := os.Open(filename)
 
-	// Return an error if the file cannot be opened
 	if err != nil {
 		return "", err
 	}
