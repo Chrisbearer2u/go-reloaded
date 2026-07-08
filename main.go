@@ -47,10 +47,8 @@ func readFile(filename string) (string, error) {
 		return "", err
 	}
 
-	// Ensure the file is closed after the function finishes
 	defer file.Close()
 
-	// Create a string builder to efficiently build the file content
 	var content strings.Builder
 
 	// Create a scanner to read the file line by line
