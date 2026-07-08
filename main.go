@@ -36,7 +36,6 @@ func main() {
 		return
 	}
 
-	// Print success message after processing and saving the file
 	fmt.Printf("Successfully processed %s to %s\n", inputFile, outputFile)
 }
 
