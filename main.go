@@ -1,47 +1,37 @@
-package main // Defines the main package. Every executable Go program must have package main.
+package main
 
 import (
-	"bufio"                 // Provides buffered I/O utilities (used for reading files efficiently)
-	"fmt"                   // Provides formatted I/O functions like Println and Printf
-	"go-reloaded/functions" // Imports a custom package that contains the ProcessText function
-	"os"                    // Provides functions for interacting with the operating system (files, arguments, etc.)
-	"strings"               // Provides string manipulation utilities
+	"bufio"
+	"fmt"
+	"go-reloaded/functions"
+	"os"
+	"strings"
 )
 
-func main() { // Entry point of the program
-	// Check if the number of command-line arguments is not equal to 3
-	// (program name + input file + output file)
+func main() {
+
 	if len(os.Args) != 3 {
-		// Print usage instruction if arguments are incorrect
+
 		fmt.Println("Usage: go run . <input file> <output file>")
-		return // Exit the program
+		return
 	}
 
-	// Store the first command-line argument as the input file name
 	inputFile := os.Args[1]
 
-	// Store the second command-line argument as the output file name
 	outputFile := os.Args[2]
 
-	// Read the content of the input file
 	content, err := readFile(inputFile)
 
-	// Check if an error occurred while reading the file
 	if err != nil {
-		// Print the error message
 		fmt.Printf("Error reading input file: %v\n", err)
-		return // Exit the program
+		return
 	}
 
-	// Process the text content using a custom function from the functions package
 	processed := functions.ProcessText(content)
 
-	// Write the processed content into the output file
 	err = writeFile(outputFile, processed)
 
-	// Check if an error occurred while writing the file
 	if err != nil {
-		// Print the error message
 		fmt.Printf("Error writing output file: %v\n", err)
 		return // Exit the program
 	}
