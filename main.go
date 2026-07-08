@@ -51,10 +51,8 @@ func readFile(filename string) (string, error) {
 
 	var content strings.Builder
 
-	// Create a scanner to read the file line by line
 	scanner := bufio.NewScanner(file)
 
-	// Loop through each line in the file
 	for scanner.Scan() {
 		// Append the current line to the string builder
 		content.WriteString(scanner.Text())
